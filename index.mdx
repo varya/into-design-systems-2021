@@ -1,0 +1,195 @@
+---
+title: Shower-MDX
+subtitle: Shower presentation generator with support of MDX syntax, powered by Next.js
+# Incude global styles here
+style: >
+  body {
+    margin: 0
+  }
+# Include footer content here or remove it
+footer: >
+  <footer class="badge">
+      <a href="https://github.com/varya/shower-mdx" target="_blank" rel="noopener">Fork me on GitHub</a>
+  </footer>
+# Include data for generating meta tags
+meta:
+  description: >
+    Shower presentation generator with support of MDX syntax, powered with Next.js
+  cover: ./pictures/cover.jpg
+  author: Shower
+  website: https://github.com/varya/shower-mdx
+  twitter: username
+---
+
+
+
+
+## Shower-MDX template
+{#cover}
+
+[Shower Presentation Template](https://github.com/shower/shower) is built by [Vadim Makeev](https://pepelsbey.net/).
+ 
+<Cover src="pictures/cover.jpg" alt="Hands on the orange typewriter in a park">
+
+[© John Carey](http://fiftyfootshadows.net/)
+
+</Cover>
+
+<style>{`
+      #cover h2 {
+        margin: 30px 0 0;
+        color: white;
+        text-align: center;
+        font-size: 70px;
+      }
+
+      #cover p {
+        margin: 10px 0 0;
+        text-align: center;
+        color: white;
+        font-style: italic;
+        font-size: 20px;
+      }
+
+      #cover p a {
+        color: white;
+      }
+`}</style>
+
+
+## What is it?
+
+This is a project template which lets you create your beautiful [Shower](https://shwr.me/) presentations with markdown syntax and custom React components.
+
+The following slides demonstrate rendered HTML. Check [index.mdx](https://github.com/varya/shower-mdx/blob/master/index.mdx) to see how it looks in markdown.
+
+[Project repository](https://github.com/varya/shower-mdx)
+
+*Feedback and contributions are warmly welcomed!*
+
+
+## Shower key features
+
+1. Built on HTML, CSS and JavaScript
+1. Works in all modern browsers
+1. Themes are separated from engine
+1. Fully keyboard accessible
+1. Printable to PDF
+
+<p className="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
+
+## Plain text on your slides
+
+Lorem ipsum dolor sit amet, consectetur [adipisicing](#4) elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, _quis nostrud_ exercitation ullamco laboris __nisi ut aliquip__ ex ea commodo consequat. Duis aute irure *dolor* in reprehenderit in voluptate velit esse cillum **dolore** eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in ```<culpa>``` qui officia deserunt mollit anim id est laborum.
+
+## Two columns if you like (or three, or four)
+
+<Columns col="2">
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.
+
+</Columns>
+
+## All kind of lists
+
+1. Simple lists are marked with bullets
+1. Ordered lists begin with a number
+1. You can even nest lists one inside another
+    * Or mix their types
+    * But do not go too far
+    * Otherwise audience will be bored
+1. Look, seven rows exactly!
+
+## Serious citations
+
+<Blockquote caption="Marcus Tullius Cicero">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.
+</Blockquote>
+
+## Code samples 1: simple code block with markdown syntax
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head> <!--Comment-->
+    <title>Shower</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="screen.css">
+</head>
+```
+
+## Code samples 2: Code component and custom jsx to highlight lines of code
+
+<Code>
+  {`<!DOCTYPE html>`}
+  <code className="mark">{`  <html lang="en">`} </code>
+  <mark>{`  <head> <!--Comment-->`}</mark>
+  {`     <title>Shower</title>`}
+  {`   <meta charset="UTF-8">`}
+  {`   <link rel="stylesheet" href="screen.css">`}
+  <mark>{`<title>Shower</title>`}</mark>
+</Code>
+
+## Even tables can be made in markdown.
+
+| Locavore         | Umami       | Helvetica | Vegan
+| ---              | ---         | ---       |---
+| **Fingerstache** | Kale        | Chips     | Keytar
+| **Sriracha**     | Gluten-free | Ennui     | Keffiyeh
+| **Thundercats**  | Jean        | Shorts    | Biodiesel
+| **Terry**        | Richardson  | Swag      | Blog
+
+It’s good to have information organized.
+
+## Pictures 
+{#picture}
+
+<Cover src="pictures/picture.jpg" alt="Orange typewriter on a wooden table close-up">
+
+[© John Carey](http://fiftyfootshadows.net/)
+ 
+</Cover>
+
+<style>{`
+  #picture h2 {
+    color: white;
+  }
+`}</style>
+
+## You can even shout this way {.shout .shrink}
+
+
+## Inner navigation
+
+<InnerNav>
+
+  - Lets you reveal list items one by one
+  - To keep some key points
+  - In secret from audience
+  - But it will work only once
+  - Nobody wants to see the same joke twice
+
+</InnerNav>
+
+## 
+{#see-more}
+
+<h2 className="shout">
+  <img src="https://shwr.me/pictures/logo.svg" alt="Shower logo"/>
+  <a href="https://github.com/shower/shower">See more on GitHub</a>
+</h2>
+
+<style>{`
+  #see-more h2 {
+    font-size: 100px
+  }
+
+  #see-more img {
+    width: 0.72em;
+    height: 0.72em;
+  }
+`}</style>
+
+
