@@ -12,6 +12,66 @@ style: >
   .no-title h2 {
     display: none;
   }
+  .slide .shout.shout--small {
+    font-size: 90px;
+  }
+  .slide h2.shout--highlighted {
+    color: #38bcc2;
+  }
+  .slide h2.shout--rainbow {
+    /* Chrome, Safari, Opera */
+    -webkit-animation: rainbow 5s infinite; 
+    
+    /* Internet Explorer */
+    -ms-animation: rainbow 5s infinite;
+    
+    /* Standar Syntax */
+    animation: rainbow 5s infinite; 
+  }
+  /* Chrome, Safari, Opera */
+  @-webkit-keyframes rainbow{
+    0%{color: orange;}	
+    10%{color: purple;}	
+    20%{color: red;}
+    30%{color: CadetBlue;}
+    40%{color: yellow;}
+    50%{color: coral;}
+    60%{color: green;}
+    70%{color: cyan;}
+    80%{color: DeepPink;}
+    90%{color: DodgerBlue;}
+    100%{color: orange;}
+  }
+
+  /* Internet Explorer */
+  @-ms-keyframes rainbow{
+    0%{color: orange;}	
+    10%{color: purple;}	
+    20%{color: red;}
+    30%{color: CadetBlue;}
+    40%{color: yellow;}
+    50%{color: coral;}
+    60%{color: green;}
+    70%{color: cyan;}
+    80%{color: DeepPink;}
+    90%{color: DodgerBlue;}
+    100%{color: orange;}
+  }
+
+  /* Standar Syntax */
+  @keyframes rainbow{
+      0%{color: orange;}	
+    10%{color: purple;}	
+    20%{color: red;}
+    30%{color: CadetBlue;}
+    40%{color: yellow;}
+    50%{color: coral;}
+    60%{color: green;}
+    70%{color: cyan;}
+    80%{color: DeepPink;}
+    90%{color: DodgerBlue;}
+    100%{color: orange;}
+  }
 # Include footer content here or remove it
 footer: >
   <footer class="badge">
@@ -63,9 +123,11 @@ _How an impact measuring tool turned into a stakeholder management system_
 
 ## Why to measure?
 
-* Design system needs to prove its business value to the upper levels. If this value is measurable, it can result into better management of resources.
+* Design system needs to prove its business value to the upper levels. If
+the value is measurable, it can result into better management of resources.
 * Design system team needs confirmation if they are doing the right thing.
-* Design system team needs to correct its plans according to instant measurements and dynamic picture. 
+* Design system team needs to correct its plans according to instant measurements
+and dynamic picture. 
 
 ## Valuable for different levels
 
@@ -80,8 +142,7 @@ _How an impact measuring tool turned into a stakeholder management system_
 ## What exactly you can measure?
 
 | What?         | Why?       | How? 
-| ---              | ---         | ---       
-| Brand |         |      
+| ---              | ---         | ---
 | Production costs     |  | 
 | Availability of the design system | | 
 | Involvement and contributions        |  | 
@@ -90,15 +151,47 @@ _How an impact measuring tool turned into a stakeholder management system_
 
 
 ## Measuring production costs
+{ .slide--shout }
 
 ### to reflect, how easier (and more cost-effective) the life is for the projects
 
 
-TODO:
+## Costs and savings
 
-* How to get the data
-* How to calculate (measuring formula)
-* How to store the data (postpone for later)
+* Component is made only once
+* Component needs to be integrated
+* Component needs to be supported
+* We support only one component
+
+
+## Costs formula, per component
+
+### How much a component costs
+```
+$ = production time
+    + (support costs * component lifetime)
+    + (integration time * amount of projects)
+```
+
+### Without design system
+```
+$ = (
+    production time + (support costs * component lifetime)
+  ) * amount of projects
+```
+
+## Costs formula, whole system
+
+<iframe width="100%" height="300" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRS34KLVMHporg-AAxzVYbjXX2GS-DhgKDRUqk4EwiGNnXdow2DFg7EufwwUQj3_L_HV11Y83rJbmba/pubhtml?widget=true&amp;headers=false"></iframe>
+
+### Cost savings: 752 hours = 18.8 weeks = 4 months
+
+## How to get the data?
+
+* Survey
+* Figma statistics / API
+* GitHub Search / API
+* Code analysators
 
 
 ## What? Why? How?
@@ -110,12 +203,33 @@ TODO: Fill the table, add B,P,I levels
 
 ### to reflect, how handy it is to use the design system
 
+## How easy it is to start using the design system?
+
+* Surveys
+* Snapshots of "costs"
+
+## How fast are updates?
+
+* Crawl project repositories weekly and detect the versions of libraries used
+* Crawl sites in production and detect the versions of libraries used
+* Inject into continious integration to get the data
+* Store the logs of these crawls and build graphs
+
+
 ## Measuring involvement into DS
 
 ### to reflect, how much collective resources are being used
 
-* Measure the acceptance
-* Measure level of contributions
+## Measure the acceptance
+
+= same data as we searched for fast updates
+
+## Measure level of contributions
+
+* Features and fixes made by contributors
+* Amount of PRs
+  by person, by teams
+* Design impact
 
 
 ## Measuring quality of DS
@@ -127,8 +241,22 @@ TODO: Fill the table, add B,P,I levels
 
 ### to reflect, how DS resources are used and if they correspond to the workload
 
-* Workload estimation
-* Automated calculations
+## Workload estimation
+
+* Learn backlog capacity. "Compund" number, can be obtained from JIRA, GitHub issues, etc.
+* Apply given resources
+
+
+## Let's count our chickens
+
+<iframe width="100%" height="400" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTamHd42yH8laeAlPRBxvF7w6BKs_RTx_jCo0wT0v07DsTS76o5sDdCHFmJc2fiSamvC-s8-71_rlqs/pubhtml?widget=true&amp;headers=false"></iframe>
+
+
+## With numbers, we can
+
+* Set up goals
+* Build hypothesis
+* Validate
 
 
 ## Operate the data
@@ -137,23 +265,24 @@ TODO: Fill the table, add B,P,I levels
 
 ## Where to store the data?
 
-## Company wiki?
+* Company wiki
+* Website
+* Documenting system
 
-Didn't work (example of Confluence)
+### didn't work
+{ .next }
 
-## Website
-
-Didn't work
-
-## Documenting systems
-
-Didn't work
 
 ## Shared office solutions
 
 * Excel (cloud)
 * Google Sheets
 
+## Sneak peek
+
+<iframe width="100%" height="300" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9v94Dv2v5lWBvRl6kCw5GfDX-pYupK9XeOaB7TJQgLE_6AUrc-O9ILidl76QL18h8jfxSUz93VElm/pubhtml?widget=true&amp;headers=false"></iframe>
+
+Example link: http://bit.ly/ds-matrix-example
 
 ## Data flow
 
@@ -163,19 +292,72 @@ TODO: make a picture
 ## Stakeholders
 { .slide--shout .slide--primary-light }
 
+## Stakeholder map in React
+
+TODO: Example from website
+
 
 ## Stakeholders in teams
 
-Also in Excel
+<iframe width="100%" height="300" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTc_0pL0CmHsQCRuZVZd6Dr8SWjK174-WMO-6IywmuXUaqm5j6-xEqXOpkQuPU5sU-bJ53GiGZo90jF/pubhtml?widget=true&amp;headers=false"></iframe>
+
+### 💡 Color-coded based on the recent survey
 
 ## Stakeholders on business levels
 
-Extended stakeholder map
+<iframe width="100%" height="300" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNr6G8yo0MPrU1sLKmi1a4q_K7HhR3VhQM0vEwigM6JwIW2NLWkpm0hDPYSkMghYvj1tXQOVlqpJ_6/pubhtml?widget=true&amp;headers=false"></iframe>
 
 ## Ecosystem?
 
 Schema of stakeholders and data flow
 
+## Link data and people
+
+<iframe width="100%" height="300" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9v94Dv2v5lWBvRl6kCw5GfDX-pYupK9XeOaB7TJQgLE_6AUrc-O9ILidl76QL18h8jfxSUz93VElm/pubhtml?widget=true&amp;headers=false"></iframe>
+
+## Why? What? How? For whom?
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xlxqbf4s8Tk" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+
+Text version: [Design systems are for people](https://publication.design.systems/design-systems-are-for-people-a484620b6988)
+
+## Why? What? How? For whom?
+
+<Blockquote caption={
+  <>
+    Magera Moon,&nbsp;
+    <a href="https://publication.design.systems/design-systems-are-for-people-a484620b6988">
+      The people part of design systems
+    </a>
+  </>
+}>
+Making design systems successful is just as much about creating a people system as it is about creating a technical or operational one.
+</Blockquote>
+
+## Why? What? How? For whom?
+
+<Blockquote caption={
+  <>
+    Ryan DeBeasi,&nbsp;
+    <a href="https://www.smashingmagazine.com/2019/10/design-systems-relationships/">
+      Design Systems Are About Relationships
+    </a>
+  </>
+}>
+To build a design system, don’t start by writing code and choosing tools; <b>start by talking to the people who will use the system</b>. Learn about their needs and constraints, and help them solve problems.
+</Blockquote>
+
+## To boost<br/>a&nbsp;design system {.shout .shout--small .shout--highlighted }
+
+## focus on people {.shout .shrink}
+
+## listen to them {.shout .shrink}
+
+## connect {.shout .shout--rainbow .shrink}
+
+<!--
+TODO: Chnage the rainbow
+-->
 
 
 ## Workflows
@@ -187,6 +369,8 @@ Schema of stakeholders and data flow
 * Someone doesn't update from old version
 * Ask teams about upcoming changes
 * Search for contributors
+
+TODO: show on schema
 
 ## Thank you
 
