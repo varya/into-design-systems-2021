@@ -36,9 +36,9 @@ style: >
 
     border: tomato 3px solid;
     
-    line-height: 100px;
+    line-height: 255px;
     font-weight: bold;
-    font-size: 1em;
+    font-size: 5em;
     text-align: center;
   }
   .timeline__item-name {
@@ -62,6 +62,195 @@ style: >
   }
   .timeline__item--position-3 {
     order: 3;
+  }
+  .team-top {
+    animation-name: fade;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+    animation-direction: alternate;
+  }
+  @keyframes fade {
+    0% {
+      opacity: 1;
+    }
+    25% {
+      opacity: 1;
+    }
+    75% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  .space-label {
+    width: 340px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    line-height: 1em;
+    transform: rotate(15deg);
+  }
+  .space-label .top,
+  .space-label .bottom {
+    height: 60px;
+    overflow: hidden;
+    position: relative;
+    width: 170px;
+    margin: 0 auto;
+  }
+  .space-label .top .ring,
+  .space-label .bottom .ring {
+    border-radius: 100%;
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    border: 3px solid #999;
+    border-width: 8px;
+  }
+  .space-label .top .ring:nth-child(2),
+  .space-label .bottom .ring:nth-child(2) {
+    border-width: 4px;
+    width: 154px;
+  }
+  .space-label .top .ring:nth-child(3),
+  .space-label .bottom .ring:nth-child(3) {
+    border-width: 2px;
+    width: 139px;
+  }
+  .space-label .top .ring:nth-child(3):after,
+  .space-label .bottom .ring:nth-child(3):after {
+    content: "";
+    width: 18px;
+    position: absolute;
+    border-top: 1px solid #999;
+    left: 50%;
+    margin-left: -9px;
+  }
+  .space-label .top .ring:nth-child(3):before,
+  .space-label .bottom .ring:nth-child(3):before {
+    content: "";
+    width: 32px;
+    position: absolute;
+    border-top: 1px solid #999;
+    margin-left: -16px;
+    left: 50%;
+  }
+  .space-label .top .ring:nth-child(1) {
+    top: 0;
+    left: 0;
+  }
+  .space-label .top .ring:nth-child(2) {
+    top: 10px;
+    left: 8px;
+  }
+  .space-label .top .ring:nth-child(3) {
+    top: 20px;
+    left: 16px;
+  }
+  .space-label .top .ring:nth-child(3):after {
+    top: 17px;
+  }
+  .space-label .top .ring:nth-child(3):before {
+    top: 22px;
+  }
+  .space-label .bottom .ring:nth-child(1) {
+    bottom: 0;
+    left: 0;
+  }
+  .space-label .bottom .ring:nth-child(2) {
+    bottom: 10px;
+    left: 8px;
+  }
+  .space-label .bottom .ring:nth-child(3) {
+    bottom: 20px;
+    left: 16px;
+  }
+  .space-label .bottom .ring:nth-child(3):after {
+    bottom: 17px;
+  }
+  .space-label .bottom .ring:nth-child(3):before {
+    bottom: 22px;
+  }
+  .space-label .text {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Raleway", sans-serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: #999;
+    height: 55px;
+    vertical-align: middle;
+    display: table-cell;
+    width: 340px;
+    position: relative;
+    left: 7px;
+    letter-spacing: 14px;
+  }
+    #chart {
+    position: relative;
+    background-color: #fff;
+    width: 700px;
+    height: 700px;
+    margin: 0 auto;
+  }
+
+  #card_container {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background-color: #fff;
+    border: 1px solid orange;
+    border-radius: 50%;
+    display: none;
+    font-family: sans-serif;
+    font-size: 20px;
+    pointer-events: none;
+  }
+
+  #card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  #card h2,
+  #card p {
+    margin: 0;
+  }
+
+  #name {
+    font-family: Verlag;
+    font-weight: bold;
+    padding-bottom: 1rem;
+  }
+
+  #team {
+    font-size: 16px;
+  }
+
+  #sub_team,
+  #responsibility {
+    font-size: 14px;
+    font-style: italic;
+  }
+
+  .arc:hover {
+    fill: #0019AF;
+  }
+
+  .circle-person:hover {
+    fill: orange;
+  }
+
+  text {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 12px;
+    fill: #fff;
   }
   .slide h2.shout--rainbow {
     /* Chrome, Safari, Opera */
@@ -119,7 +308,7 @@ style: >
   }
 # Include footer content here or remove it
 footer: >
-  <footer class="badge">
+  <footer className="badge">
       <a href="https://github.com/varya/into-design-systems-2021" target="_blank" rel="noopener">Fork me on GitHub</a>
   </footer>
 # Include data for generating meta tags
@@ -163,25 +352,92 @@ _How an impact measuring tool turned into a stakeholder management system_
 
 ## About myself
 
+<!--
+
+My name is Varya. I work as a freelancer, and design systems are my
+major focus. I started with libraries of components about 10 years ago,
+before the term "design systems" even emerged.
+
+By that time, my own understanding and the community's was more technical.
+We were paying a lot of attention to how to code the components,
+how to document them. Many new tools appeared since then.
+
+Slightly by today, I changed my focus to more process and people oriented.
+I realised that the biggest obstacle on the way is the gap between specialists:
+designers and developers, product people and business people. In the meanwhile
+I got a design education that helped me to see the picture at scale.
+
+Nowadays, even though I am still doing a lot of hands-on and architectural frontend
+work related to design systems, I shift to engineering&project management, educating,
+and enganging people.
+
+-->
+
 
 ## What the talk is about
 
+<!--
 
-## +1 dev
+This talk is a brief overview of how I mine the data about the design system
+projects I am involved now. And how this data becomes the basis for the
+decisions about the design system's near and distant future.
+
+Due to NDA it was not possible that I share the exact data and screenshots of
+the tools in use. So, I prepared the examples with imaginary data specifically
+for this presentation. And the approach to the data should be quite general.
+So, I hope that more people could kind of pull that to their own context.
+
+-->
+
+
+## How a design system team asked for more resources
 { .slide--shout .slide--highlighted }
 
-## How we asked for +1 dev
+### Based on a true story
 
 <!--
-TODO: IT Crowd picture, e.g. https://i.ytimg.com/vi/l316YBP9Gd0/maxresdefault.jpg
+
+Let me start with the story. The story is based on reality but the the
+characters depicted are fictional and all the matches are random.
+
+-->
+
+
+## team and boss
+{ .no-title }
+
+<Cover className="team-top" src="pictures/it-crowd-team.jpeg" alt=""/>
+<Cover className="team-bottom" src="pictures/it-crowd-boss.jpeg" alt=""/>
+
+<!--
+Once upon a time, a design system team realised that their
+backlog is too large for them. They had a lot of great ideas but
+not so much time to implement them. So they went to the money
+guy and asked for more resources. Basically, they wanted that
+the company opens a new position for their team, so that they can hire
+an additional person.
+They were sure that the addition is needed, especially for such a
+great internal product as a design system.
 -->
 
 
 ## Actually
 
 * The value of design system is not clear
-* Business has no idea what we are doing
+* Business has no idea what DS is doing
 * DS team operates feelings not numbers
+
+<!--
+But it turned out that the money guy has different opinion. And it
+was not a problem that their design system was bad, or they didn't
+perform. In a nutshell, the thing was that the business had no idea
+of what they were doing. Yeah, the company had a desing system
+and even financed it because there was already a dedicated team for
+it. But there was no proof of doing weel. And even the design system
+team itself only had feelings of what and how well they are doing.
+Feelings, not knowledge supported with any data.
+-->
+
 
 ## Growing from seed
 { .no-title }
@@ -189,42 +445,70 @@ TODO: IT Crowd picture, e.g. https://i.ytimg.com/vi/l316YBP9Gd0/maxresdefault.jp
 <Cover src="pictures/seed.jpg" alt=""/>
 
 <!--
-This grew into much bigger
+That story happened to me personally. It is not exact but similar.
+And actually it was years ago but it was the first push towards
+my focus on measuring design systems. That finally grew into something
+bigger.
 -->
 
 ## Measuring a design system
 { .slide--shout .slide--highlighted }
 ### Why? What? How?
 
+<!--
+Measuring is a hot topic now. There is already very valuable articles
+and talk about it that explain very well why measuring is important,
+what and how we can measure.
+When I started to work on this presentation, I was also thinking to
+elaborate on these three questions: why? what? and how? I even made
+30 or 40 slides. But perhaps these slides will be used at some other
+time, bacause I asked myself a question "when?".
+-->
+
 
 ## When?
 { .slide--shout .slide--primary }
 
-<!-- Where do we focus? When? -->
+<!--
+When preparing the talk I recollected the story about asking for
+more resources. It was actually a happy end. The position to the
+design system team was opened and they hired whom they wanted.
+
+Thinking of what happened then, how they convinced the business
+people in the company, I realised the following.
+-->
 
 
 ## Timeline
 { .no-title }
 
-<div class="timeline">
-  <div class="timeline__item timeline__item--position-2 next">
-    <div class="timeline__item-name">present</div>
+<div className="timeline">
+  <div className="timeline__item timeline__item--position-2 next">
+    <div className="timeline__item-name">present</div>
+    🤔
   </div>
-  <div class="timeline__item timeline__item--position-1 next">
-    <div class="timeline__item-name">past</div>
+  <div className="timeline__item timeline__item--position-1 next">
+    <div className="timeline__item-name">past</div>
+    💾
   </div>
-  <div class="timeline__item timeline__item--position-3 next">
-    <div class="timeline__item-name">future</div>
+  <div className="timeline__item timeline__item--position-3 next">
+    <div className="timeline__item-name">future</div>
+    💡
   </div>
 </div>
 
 <!--
 
-TODO: put icons
-
 To get an idea of what we should do now, we
-have to analyse our past and imagine what we anim
+have to analyse our past and imagine what we aim
 in the future.
+
+When I strated with measuring, I did not expect where it brings me.
+But finally it turned out that when we use data to bridge the past and
+the future, it opens new perspectives in the present. New ways of working,
+new focuses.
+
+But let's see step by step.
 
 -->
 
@@ -240,34 +524,61 @@ present
 
 ### to reflect, how easier (and more cost-effective) the life is for the projects
 
+<Badge title="past"/>
+
 <!--
-TODO: "past" badge
+If we analyse our past, we can measure many things. One of the most obvious
+metrics would be production costs. In short, how much money a design system
+saves us.
 -->
 
 
 ## Costs and savings
 
-* Component is made only once
-* Component needs to be integrated
-* Component needs to be supported
-* We support only one component
+* Component is made only once 👍🏻
+* Component needs to be integrated 👎🏻
+* Component needs to be supported 👎🏻
+* We support only one component 👍🏻
+
+<!--
+Re-using of the components definetely saves us design and development
+time spent. But we cannot just multiply how many times the component
+was used to its one-time costs and say that we saved that much money.
+
+Using a design system costs too. We can work on decreasing these costs
+but anyway we should say out load that linking a library of components
+to the project also requires some work. Reading documentation costs time.
+Possible bugs, repoting them, getting updates with fixes — that all forms
+integration costs.
+
+From design system team, they have to support. So, the more they are offering,
+the more components they serve, the more is the support load.
+
+But luckily we support only one component, thanks to the reuse.
+
+-->
 
 
-## Costs formula, per component
+## Costs formula
 
-### How much a component costs
+### To make it once (in Design System)
+
 ```
 $ = production time
     + (support costs * component lifetime)
     + (integration time * amount of projects)
 ```
 
-### Without design system
+### To make it many times
+
 ```
 $ = (
     production time + (support costs * component lifetime)
   ) * amount of projects
 ```
+
+<!--
+-->
 
 ## Costs formula, whole system
 
@@ -280,7 +591,27 @@ $ = (
 * Survey
 * Figma statistics / API
 * GitHub Search / API
-* Code analysators
+* Code analyzers
+
+<!--
+How exactly a team gets the data depends on many factors. Mostly,
+on the shape of their organization and the tools they are using.
+
+If code is stored on in some repository, say GitHub, it is possible to
+obtain the data via search. In my recent project, we were using
+a custom script that crawls across company's GitHub Enterprise and gets
+all the needed data.
+
+With Figma it is a bit more tricky. On Eternprise licenses there is
+some statistics but if we need per component, it is not possible to
+export automatically. Probably it can be done via Figma API but I haven't
+checked. I consider it as a minor problem because these stats snapshots
+are not needed every day. Once a month is already quite often, and we can
+just manually re-write the numbers into some file where we store it.
+
+You can always go with a simpliest version — just to run a survey, so that
+people tell you what kind of components they use. This is already some data.
+-->
 
 
 ## Measuring the past
@@ -295,20 +626,42 @@ How easy to start? How fast are updates? Quality of documenttaion. Level
 ### 3. Involvement and contributions
 Design system's acceptance. Level of contributions.
 
+<!--
+Besides the production costs, it is possible to measure many other things
+when looking to the past.
+But keeping the context, let's already forward to the future.
+-->
+
 
 ## Measuring the process of DS
+{ .slide--shout}
 
 ### to reflect, how DS resources are used and if they correspond to the workload
 
+<Badge title="future"/>
+
 <!--
-TODO: "future" badge
+As for the future, we can measure the processes in the design system. here
+we examine how design system resources are used and if they correspond to 
+the workload.
 -->
 
 
 ## Workload estimation
 
-* Learn backlog capacity. "Compund" number, can be obtained from JIRA, GitHub issues, etc.
-* Apply given resources
+### Learn backlog capacity
+"Compund" number, can be obtained from JIRA, GitHub issues, etc.
+
+### Apply given resources
+
+<!--
+The idea is quite straightforward. If we know what we would like to do,
+and we know the given resources, we can prognose if the goal can be achieved.
+
+Again, it is a good idea to use a task tracker. Because this way, the
+workload becomes certain. Some teams that use the task trackers on an advanced
+level can even automatically estimate.
+-->
 
 
 ## Let's count our chickens
@@ -328,8 +681,9 @@ TODO: "future" badge
 
 ### To get instant guidance towards right direction
 
+<Badge title="present"/>
+
 <!--
-TODO: "present" badge
 -->
 
 
@@ -357,9 +711,10 @@ TODO: "present" badge
 ## Stakeholders
 { .slide--shout .slide--primary-light }
 
+
 ## Stakeholder map in React
 
-TODO: Example from website
+<iframe width="800" height="400" src="https://www.youtube.com/embed/qqP03xj6gQw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 ## Stakeholders in teams
@@ -393,7 +748,7 @@ Example link: http://bit.ly/ds-matrix-example
 
 ## Link data and people
 
-<iframe width="100%" height="300" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9v94Dv2v5lWBvRl6kCw5GfDX-pYupK9XeOaB7TJQgLE_6AUrc-O9ILidl76QL18h8jfxSUz93VElm/pubhtml?widget=true&amp;headers=false"></iframe>
+<iframe width="100%" height="400" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9v94Dv2v5lWBvRl6kCw5GfDX-pYupK9XeOaB7TJQgLE_6AUrc-O9ILidl76QL18h8jfxSUz93VElm/pubhtml?widget=true&amp;headers=false"></iframe>
 
 ## Why? What? How? For whom?
 

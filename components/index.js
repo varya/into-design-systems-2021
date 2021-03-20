@@ -1,3 +1,4 @@
+export { default as Badge } from "./Badge";
 export { default as Blockquote } from "./Blockquote";
 export { default as Code } from "./Code";
 export { default as Columns } from "./Columns";
