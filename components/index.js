@@ -5,5 +5,6 @@ export { default as Cover } from "./Cover";
 export { default as Head } from "./Head";
 export { default as InnerNav } from "./InnerNav";
 export { default as Slide } from "./Slide";
+export { default as TimeCard } from "./TimeCard";
 export { default as WithAttributes } from "./WithAttributes";
 export { default as ListWithAttributes } from "./ListWithAttributes";
