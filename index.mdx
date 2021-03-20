@@ -63,6 +63,11 @@ style: >
   .timeline__item--position-3 {
     order: 3;
   }
+  .timeline__item-icon {
+    width: 150px;
+    margin: 52px;
+    margin-top: 45px;
+  }
   .team-top {
     animation-name: fade;
     animation-timing-function: ease-in-out;
@@ -485,15 +490,15 @@ people in the company, I realised the following.
 <div className="timeline">
   <div className="timeline__item timeline__item--position-2 next">
     <div className="timeline__item-name">present</div>
-    🤔
+    <img className="timeline__item-icon" src="pictures/icon__question.png"/>
   </div>
   <div className="timeline__item timeline__item--position-1 next">
     <div className="timeline__item-name">past</div>
-    💾
+    <img className="timeline__item-icon" src="pictures/icon__parchment.png"/>
   </div>
   <div className="timeline__item timeline__item--position-3 next">
     <div className="timeline__item-name">future</div>
-    💡
+    <img className="timeline__item-icon" src="pictures/icon__puzzle.png"/>
   </div>
 </div>
 
@@ -750,15 +755,40 @@ Example link: http://bit.ly/ds-matrix-example
 
 <iframe width="100%" height="400" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9v94Dv2v5lWBvRl6kCw5GfDX-pYupK9XeOaB7TJQgLE_6AUrc-O9ILidl76QL18h8jfxSUz93VElm/pubhtml?widget=true&amp;headers=false"></iframe>
 
-## Why? What? How? For whom?
+
+## Timeline
+{ .no-title }
+
+<div className="timeline">
+  <div className="timeline__item timeline__item--position-2">
+    <div className="timeline__item-name">present</div>
+    <img className="timeline__item-icon" src="pictures/icon__group.png"/>
+  </div>
+  <div className="timeline__item timeline__item--position-1">
+    <div className="timeline__item-name">past</div>
+    <img className="timeline__item-icon" src="pictures/icon__box.png"/>
+  </div>
+  <div className="timeline__item timeline__item--position-3">
+    <div className="timeline__item-name">future</div>
+    <img className="timeline__item-icon" src="pictures/icon__target.png"/>
+  </div>
+</div>
+
+
+## Who?
+{ .slide--shout .slide--primary }
+
+
+## Design Systems are for people
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xlxqbf4s8Tk" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
-Text version: [Design systems are for people](https://publication.design.systems/design-systems-are-for-people-a484620b6988)
+Also available in a [text version](https://publication.design.systems/design-systems-are-for-people-a484620b6988)
 
 ## Why? What? How? For whom?
+{ .no-title }
 
-<Blockquote caption={
+<Blockquote style={{ marginTop: '2em'}} caption={
   <>
     Magera Moon,&nbsp;
     <a href="https://publication.design.systems/design-systems-are-for-people-a484620b6988">
@@ -769,9 +799,7 @@ Text version: [Design systems are for people](https://publication.design.systems
 Making design systems successful is just as much about creating a people system as it is about creating a technical or operational one.
 </Blockquote>
 
-## Why? What? How? For whom?
-
-<Blockquote caption={
+<Blockquote style={{ marginTop: '2em'}} className="next" caption={
   <>
     Ryan DeBeasi,&nbsp;
     <a href="https://www.smashingmagazine.com/2019/10/design-systems-relationships/">
@@ -784,11 +812,11 @@ To build a design system, don’t start by writing code and choosing tools; <b>s
 
 ## To boost<br/>a&nbsp;design system {.shout .shout--small .shout--highlighted }
 
+
 ## focus on people {.shout .shrink}
 
-## listen to them {.shout .shrink}
 
-## connect {.shout .shout--rainbow .shrink}
+## connect {.shout .shout--rainbow}
 
 <!--
 TODO: Chnage the rainbow

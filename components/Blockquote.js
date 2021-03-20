@@ -1,6 +1,6 @@
-const Blockquote = ({ children, caption }) => {
+const Blockquote = ({ children, caption, className, ...otherProps }) => {
   return (
-    <figure>
+    <figure className={className} {...otherProps}>
       <blockquote>
         <p>{children}</p>
       </blockquote>
