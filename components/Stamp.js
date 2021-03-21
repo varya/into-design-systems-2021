@@ -1,4 +1,4 @@
-const Badge = ({ children, title, ...otherProps }) => {
+const Stamp = ({ children, title, ...otherProps }) => {
   return (
     <div className="space-label">
       <div className="top">
@@ -16,4 +16,4 @@ const Badge = ({ children, title, ...otherProps }) => {
   );
 };
 
-export default Badge;
+export default Stamp;
