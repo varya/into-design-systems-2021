@@ -257,60 +257,6 @@ style: >
     font-size: 12px;
     fill: #fff;
   }
-  .slide h2.shout--rainbow {
-    /* Chrome, Safari, Opera */
-    -webkit-animation: rainbow 5s infinite; 
-    
-    /* Internet Explorer */
-    -ms-animation: rainbow 5s infinite;
-    
-    /* Standar Syntax */
-    animation: rainbow 5s infinite; 
-  }
-  /* Chrome, Safari, Opera */
-  @-webkit-keyframes rainbow{
-    0%{color: orange;}	
-    10%{color: purple;}	
-    20%{color: red;}
-    30%{color: CadetBlue;}
-    40%{color: yellow;}
-    50%{color: coral;}
-    60%{color: green;}
-    70%{color: cyan;}
-    80%{color: DeepPink;}
-    90%{color: DodgerBlue;}
-    100%{color: orange;}
-  }
-
-  /* Internet Explorer */
-  @-ms-keyframes rainbow{
-    0%{color: orange;}	
-    10%{color: purple;}	
-    20%{color: red;}
-    30%{color: CadetBlue;}
-    40%{color: yellow;}
-    50%{color: coral;}
-    60%{color: green;}
-    70%{color: cyan;}
-    80%{color: DeepPink;}
-    90%{color: DodgerBlue;}
-    100%{color: orange;}
-  }
-
-  /* Standar Syntax */
-  @keyframes rainbow{
-      0%{color: orange;}	
-    10%{color: purple;}	
-    20%{color: red;}
-    30%{color: CadetBlue;}
-    40%{color: yellow;}
-    50%{color: coral;}
-    60%{color: green;}
-    70%{color: cyan;}
-    80%{color: DeepPink;}
-    90%{color: DodgerBlue;}
-    100%{color: orange;}
-  }
 # Include footer content here or remove it
 footer: >
   <footer class="badge">
@@ -923,11 +869,35 @@ To build a design system, don’t start by writing code and choosing tools; <b>s
 ## focus on people {.shout .shrink}
 
 
-## connect {.shout .shout--rainbow}
+## connect {.shout}
+{.connect}
 
-<!--
-TODO: Chnage the rainbow
--->
+<style>{`
+.connect h2 {
+  color: #fff;
+  font-size: 92px;
+  font-family: "ubuntu";
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: "Josefin Sans", sans-serif;
+  background: linear-gradient(to right, #38bcc2 10%, #ca4e1f 50%, #e69445 60%);
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 1.5s linear infinite;
+  display: inline-block;
+}
+@keyframes textclip {
+	to {
+		background-position: 200% center;
+	}
+}
+`}</style>
 
 
 ## Thank you
