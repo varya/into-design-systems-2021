@@ -355,7 +355,75 @@ _How an impact measuring tool turned into a stakeholder management system_
       }
 `}</style>
 
-## About myself
+## Me
+{ .no-title .about-me }
+
+![](pictures/me.jpg){ .photo }
+
+### Varya Stepanova
+<b>Design Systems Architect</b><br/>
+<small>engineering manager, frontend architect, independent consultant</small>
+
+#### Contacts
+<div className="contacts">
+  <span className="twitter"></span><a href="https://twitter.com/varya_en">@varya_en</a>
+  <br/>
+  <span className="globe"></span><a href="http://varya.me">varya.me</a>
+</div>
+
+
+<style>{`
+.about-me p {
+  font-size: 80%;
+}
+.about-me .photo {
+  float: left;
+  width: 300px;
+  margin-top: 1em;
+  margin-bottom: 6em;
+  margin-right: 1em;
+  border-radius: 50%;
+}
+
+.about-me h4 {
+  color: #ca4e1f;
+  font: 1em/1 'FF Meta Serif',sans-serif;
+  margin-bottom: .5em;
+}
+.about-me b {
+  font-size: 1.25em;
+}
+
+.about-me .contacts {
+  line-height: 1.5em;
+  font-size: 0.8em;
+}
+
+.about-me .twitter
+{
+  content: "";
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  background-image:url(pictures/twitter-logo.png);
+  background-size: cover;
+  margin-right: 0.5em;
+  margin-bottom: -0.5em;
+}
+.about-me .globe
+{
+  content: "";
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  background-image:url(pictures/globe.png);
+  background-size: 1.15em;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 0.5em;
+  margin-bottom: -0.5em;
+}
+`}</style>
 
 <!--
 
@@ -835,9 +903,9 @@ TODO: Chnage the rainbow
 #### by Varya Stepanova
 
 <div className="contacts">
-  <a className="twitter" href="https://twitter.com/varya_en">@varya_en</a>
+  <span className="twitter"></span><a href="https://twitter.com/varya_en">@varya_en</a>
   <br/>
-  <a href="http://varya.me">varya.me</a>
+  <span className="globe"></span><a href="http://varya.me">varya.me</a>
 </div>
 
 
@@ -849,6 +917,9 @@ TODO: Chnage the rainbow
 </div>
 
 <style>{`
+.thanks .credits__title {
+  margin-top: 2em;
+}
 .thanks .credits,
 .thanks .credits__title {
   font-size: 0.5em;
@@ -879,7 +950,7 @@ TODO: Chnage the rainbow
 }
 
 .thanks .contacts {
-  line-height: 1;
+  line-height: 1.5em;
   font-size: 0.8em;
 }
 .thanks .contacts li:before {
@@ -888,20 +959,25 @@ TODO: Chnage the rainbow
 
 .thanks .twitter
 {
-  text-decoration: none;
-  color: currentColor;
-  background: none;
-  border-bottom: 0;
+  content: "";
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  background-image:url(pictures/twitter-logo.png);
+  background-size: cover;
+  margin-right: 0.5em;
+  margin-bottom: -0.5em;
 }
-
-.thanks .twitter::before
+.thanks .globe
 {
   content: "";
   display: inline-block;
   width: 1.5em;
   height: 1.5em;
-  background-image:url('pictures/twitter-logo.png');
-  background-size: cover;
+  background-image:url(pictures/globe.png);
+  background-size: 1.15em;
+  background-repeat: no-repeat;
+  background-position: center;
   margin-right: 0.5em;
   margin-bottom: -0.5em;
 }
