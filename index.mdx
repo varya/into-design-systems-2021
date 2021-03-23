@@ -498,7 +498,7 @@ Feelings, not knowledge supported with any data.
 That story happened to me personally. It is not exact but similar.
 And actually it was years ago but it was the first push towards
 my focus on measuring design systems. That finally grew into something
-bigger.
+bigger than just convincing the money guy.
 -->
 
 ## Measuring a design system
@@ -583,12 +583,39 @@ saves us.
 -->
 
 
-## Costs and savings
+## Costs and savings w/o DS
 
-* Component is made only once 👍🏻
-* Component needs to be integrated 👎🏻
-* Component needs to be supported 👎🏻
-* We support only one component 👍🏻
+### 1 component, 1 project
+
+```
+$ = production time + (support costs * component lifetime)
+```
+
+### 1 component, many projects
+```
+$ = (
+    production time + (support costs * component lifetime)
+  ) * amount of projects
+```
+
+## Costs and savings /w DS
+
+### 1 component, in the design system
+
+```
+$ = production time + (support costs * component lifetime)
+```
+
+### same component, at the projects
+```
+$ = integration costs * amount of projects
+```
+
+### altogether
+```
+$ = $(design system) + $(projects)
+```
+
 
 <!--
 Re-using of the components definetely saves us design and development
@@ -608,40 +635,17 @@ But luckily we support only one component, thanks to the reuse.
 
 -->
 
+## Where to get this data from?
 
-## Costs formula
+`production time` — survey, tracker, documented time
 
-### To make it once (in Design System)
+`support costs` - estimation, `production time * 2 / year`
 
-```
-$ = production time
-    + (support costs * component lifetime)
-    + (integration time * amount of projects)
-```
+`integration costs` - survey, tracker, documented, estimation
 
-### To make it many times
+`component lifetime` - git history, data from design files
 
-```
-$ = (
-    production time + (support costs * component lifetime)
-  ) * amount of projects
-```
-
-<!--
--->
-
-## Costs formula, whole system
-
-<iframe width="100%" height="300" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRS34KLVMHporg-AAxzVYbjXX2GS-DhgKDRUqk4EwiGNnXdow2DFg7EufwwUQj3_L_HV11Y83rJbmba/pubhtml?widget=true&amp;headers=false"></iframe>
-
-### Cost savings: 752 hours = 18.8 weeks = 4 months
-
-## How to get the data?
-
-* Survey
-* Figma statistics / API
-* GitHub Search / API
-* Code analyzers
+`amount of projects` - github search, figma data, survey
 
 <!--
 How exactly a team gets the data depends on many factors. Mostly,
@@ -662,6 +666,41 @@ just manually re-write the numbers into some file where we store it.
 You can always go with a simpliest version — just to run a survey, so that
 people tell you what kind of components they use. This is already some data.
 -->
+
+
+## Example: button component
+
+```
+production time = 10 h         integration costs = 2h
+support costs = 20 h/year      amount of projects = 5
+component lifetime = 3 years
+```
+
+### costs and savings
+
+```
+$(without ds) = (10h + 20h*3y)*5 = 350h
+$(with ds) = (10h + 20h*3y) + 2h*5 = 80h
+
+SAVED ON THE BUTTON FOR 3 YEARS: 350h - 80h = 270h
+```
+
+## How accurate is it?
+
+The formulas don't have to be perfect.
+
+They help to <u>start a conversation</u>
+with the business.
+
+Together, you will co-create better formulas for your
+paricular organisation.
+
+
+## Costs formula, whole system
+
+<iframe width="100%" height="300" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRS34KLVMHporg-AAxzVYbjXX2GS-DhgKDRUqk4EwiGNnXdow2DFg7EufwwUQj3_L_HV11Y83rJbmba/pubhtml?widget=true&amp;headers=false"></iframe>
+
+### Cost savings: 752 hours = 18.8 weeks = 4 months
 
 
 ## Measuring the past
@@ -724,6 +763,36 @@ level can even automatically estimate.
 * Set up goals
 * Build hypothesis
 * Validate
+* Speak to the business
+
+
+## happy boss
+{ .no-title .happy-boss }
+
+<Cover src="pictures/it-crowd-boss.jpeg" alt=""/>
+
+<div className="smile next">🤩</div>
+
+<div className="money next">
+💰 💰 💰 💰 💰 💰 💰 💰
+</div>
+
+<style>{`
+.happy-boss .smile {
+  font-size: 9em;
+  position: absolute;
+  left: 410px;
+  top: -15px;
+}
+.happy-boss .money {
+  font-size: 3em;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+}
+`}</style>
 
 
 ## Measuring the reality
@@ -748,42 +817,27 @@ level can even automatically estimate.
 * Website
 * Documenting system
 
-### didn't work
+### Was not good for the business people
 { .next }
 
 
 ## Shared office solutions
 
-* Excel (cloud)
-* Google Sheets
+Excel (cloud) / Google Sheets
 
+### Data follow
 
-## Stakeholders
-{ .slide--shout .slide--primary-light }
+```
+Search script (GitHub Api) -> CSV -> Excel 
+```
 
+### Other options
 
-## Stakeholder map in React
-{ .sh-map-react }
-
-<iframe width="800" height="380" src="https://www.youtube.com/embed/qqP03xj6gQw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-Credits: [Tuija Latva](https://www.linkedin.com/in/tuijalatva/)
-
-<style>{`
-.sh-map-react {
-  font-size: 0.5em;
-}
-`}</style>
-
-## Stakeholders in teams
-
-<iframe width="100%" height="300" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTc_0pL0CmHsQCRuZVZd6Dr8SWjK174-WMO-6IywmuXUaqm5j6-xEqXOpkQuPU5sU-bJ53GiGZo90jF/pubhtml?widget=true&amp;headers=false"></iframe>
-
-### 💡 Color-coded based on the recent survey
-
-## Stakeholders on business levels
-
-<iframe width="100%" height="300" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNr6G8yo0MPrU1sLKmi1a4q_K7HhR3VhQM0vEwigM6JwIW2NLWkpm0hDPYSkMghYvj1tXQOVlqpJ_6/pubhtml?widget=true&amp;headers=false"></iframe>
+```
+Figma stats   ->
+Surveys       ->   Excel
+Code analysis ->
+```
 
 
 ## How design system is doing?
@@ -802,11 +856,36 @@ Example link: http://bit.ly/ds-matrix-example
 * Someone doesn't update from old version
 * Ask teams about upcoming changes
 * Search for contributors
+* Searching for another team
+
+
+## Stakeholders
+{ .slide--shout .slide--primary-light }
+
+
+## Stakeholders in teams
+
+<iframe width="100%" height="300" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTc_0pL0CmHsQCRuZVZd6Dr8SWjK174-WMO-6IywmuXUaqm5j6-xEqXOpkQuPU5sU-bJ53GiGZo90jF/pubhtml?widget=true&amp;headers=false"></iframe>
+
+### 💡 Color-coded based on the recent survey
+
+## Stakeholders on business levels
+
+<iframe width="100%" height="300" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQNr6G8yo0MPrU1sLKmi1a4q_K7HhR3VhQM0vEwigM6JwIW2NLWkpm0hDPYSkMghYvj1tXQOVlqpJ_6/pubhtml?widget=true&amp;headers=false"></iframe>
 
 
 ## Link data and people
 
 <iframe width="100%" height="400" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vT9v94Dv2v5lWBvRl6kCw5GfDX-pYupK9XeOaB7TJQgLE_6AUrc-O9ILidl76QL18h8jfxSUz93VElm/pubhtml?widget=true&amp;headers=false"></iframe>
+
+
+## Open in-company solution
+
+Data and the tool available for everyone in the company
+
+### For the design system team
+### For the teams to connect
+### For business people
 
 
 ## Timeline
@@ -830,6 +909,19 @@ Example link: http://bit.ly/ds-matrix-example
 
 ## Who?
 { .slide--shout .slide--primary }
+
+
+## Listen to the people
+
+| at project           | in ds            | at business level
+|----------------------|------------------|------------------
+| how much ds helps?   | production costs | how do we count?
+| integration costs    | support costs    | upcoming challenges
+| ui coverage          | are contributions enough?                 |
+
+### Are you sartisfied?
+### How we could help?
+### Can you help us?
 
 
 ## Design Systems are for people
@@ -916,6 +1008,8 @@ To build a design system, don’t start by writing code and choosing tools; <b>s
 </div>
 
 ### Welcome to [hands-on-workshop.varya.me](https://hands-on-workshop.varya.me/){ .workshop-link }
+
+[Discount code `INTODS`](www.eventbrite.com/e/143823667461/?discount=INTODS){ style="color: #000; background: none;" }
 
 
 #### Credits
