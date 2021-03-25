@@ -389,13 +389,13 @@ _How an impact measuring tool turned into a stakeholder management system_
 
 <!--
 
-My name is Varya. I work as a freelancer, and design systems are my
+My name is Varya. I work as an independent consultant, and design systems are my
 major focus. I started with libraries of components about 10 years ago,
 before the term "design systems" even emerged.
 
 By that time, my own understanding and the community's was more technical.
 We were paying a lot of attention to how to code the components,
-how to document them. Many new tools appeared since then.
+how to document them.
 
 Slightly by today, I changed my focus to more process and people oriented.
 I realised that the biggest obstacle on the way is the gap between specialists:
@@ -403,7 +403,7 @@ designers and developers, product people and business people. In the meanwhile
 I got a design education that helped me to see the picture at scale.
 
 Nowadays, even though I am still doing a lot of hands-on and architectural frontend
-work related to design systems, I shift to engineering&project management, educating,
+work related to the design systems, I shift to engineering&project management, educating,
 and enganging people.
 
 -->
@@ -429,7 +429,7 @@ and enganging people.
 <!--
 
 This talk is a brief overview of how I mine the data about the design system
-projects I am involved now. And how this data becomes the basis for the
+projects I am involved in. And how this data becomes the basis for the
 decisions about the design system's near and distant future.
 
 Due to NDA it was not possible that I share the exact data and screenshots of
@@ -525,7 +525,7 @@ time, bacause I asked myself a question "when?".
 { .slide--shout .slide--primary }
 
 <!--
-When preparing the talk I recollected the story about asking for
+I recollected the story about asking for
 more resources. It was actually a happy end. The position to the
 design system team was opened and they hired whom they wanted.
 
@@ -596,7 +596,7 @@ saves us.
 $ = production time + (support costs * component lifetime)
 ```
 
-### 1 component, many projects
+### same component, many projects
 ```
 $ = (
     production time + (support costs * component lifetime)
@@ -644,7 +644,7 @@ But luckily we support only one component, thanks to the reuse.
 
 `production time` — survey, tracker, documented time
 
-`support costs` - estimation, `production time * 2 / year`
+`support costs` - estimation
 
 `integration costs` - survey, tracker, documented, estimation
 
@@ -775,6 +775,25 @@ level can even automatically estimate.
 * Speak to the business
 
 
+## Timeline
+{ .no-title }
+
+<div className="timeline">
+  <div className="timeline__item timeline__item--position-2">
+    <div className="timeline__item-name">present</div>
+    <img className="timeline__item-icon" src="pictures/icon__negotiation.png"/>
+  </div>
+  <div className="timeline__item timeline__item--position-1">
+    <div className="timeline__item-name">past</div>
+    <img className="timeline__item-icon" src="pictures/icon__parchment.png"/>
+  </div>
+  <div className="timeline__item timeline__item--position-3">
+    <div className="timeline__item-name">future</div>
+    <img className="timeline__item-icon" src="pictures/icon__puzzle.png"/>
+  </div>
+</div>
+
+
 ## happy boss
 { .no-title .happy-boss }
 
@@ -865,7 +884,7 @@ every hour about the dynamics.
 ## Where to store the data?
 
 * Company wiki
-* Website
+* Intranet website
 * Documenting system
 
 ### Was not good for the business people
@@ -876,7 +895,7 @@ every hour about the dynamics.
 
 Excel (cloud) / Google Sheets
 
-### Data follow
+### What DS components are used at the projects
 
 ```
 Search script (GitHub API) -> CSV -> Excel 
@@ -905,7 +924,7 @@ Example link: http://bit.ly/ds-matrix-example
 
 * Library has critical updates in particular components
 * Ask teams about upcoming changes
-* Someone doesn't update from old version
+* Someone is not using the component. Why?
 * Design system team is searching for contributors
 * Team search for other teams using the same component
 
